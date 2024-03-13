@@ -1618,10 +1618,18 @@ export const de = {
   },
   "messageComp": {
       "info": "Eine Benachrichtigung senden",
+      "loading": "Ladebestätigung senden",
       "success": "Erfolgsbenachrichtigung senden",
       "warn": "Eine Warnmeldung senden",
       "error": "Eine Fehlerbenachrichtigung senden"
   },
+  "tostComp": {
+    "info": "Eine Benachrichtigung senden",
+    "loading": "Ladebestätigung senden",
+    "success": "Erfolgsbenachrichtigung senden",
+    "warn": "Eine Warnmeldung senden",
+    "error": "Eine Fehlerbenachrichtigung senden"
+},
   "themeComp": {
       "switchTo": "Thema wechseln"
   },
@@ -1855,7 +1863,10 @@ export const de = {
       "maxWidthTip": "Die maximale Breite sollte größer als oder gleich 350 sein",
       "themeSetting": "Angewandter Stil Thema",
       "themeSettingDefault": "Standard",
-      "themeCreate": "Thema erstellen"
+      "themeCreate": "Thema erstellen",
+      "appTitle": "Titel",
+      "appDescription": "Beschreibung",
+      "appCategory": "Kategorie",
   },
   "customShortcut": {
       "title": "Benutzerdefinierte Abkürzungen",

@@ -348,6 +348,8 @@ style: {
     tips: "提示",
     margin: "外边距",
     padding: "内边距",
+    inputMargin:"输入余量",
+    inputPadding:"输入填充",
     marginLeft: "左外边距",
     marginRight: "右外边距",
     marginTop: "上外边距",

@@ -46,6 +46,8 @@ export interface ThemeDetail {
   chart?: string;
   margin?: string;	
   padding?: string;
+  inputMargin?:string;
+  inputPadding?:string;
   gridColumns?: string; //Added By Aqib Mirza
   textSize?: string;
 }

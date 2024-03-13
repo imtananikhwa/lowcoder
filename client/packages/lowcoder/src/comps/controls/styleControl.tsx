@@ -56,6 +56,8 @@ import {
   TextTransformConfig,
   TextDecorationConfig,
   borderStyleConfig,
+  InputMarginConfig,
+  InputPaddingConfig,
 
 
 } from "./styleControlConstants";
@@ -160,6 +162,13 @@ function isMarginConfig(config: SingleColorConfig): config is MarginConfig {
 function isPaddingConfig(config: SingleColorConfig): config is PaddingConfig {
   return config.hasOwnProperty("padding");
 }
+function isInputMarginConfig(config: SingleColorConfig): config is InputMarginConfig {
+  return config.hasOwnProperty("inputMargin");
+}
+
+function isInputPaddingConfig(config: SingleColorConfig): config is InputPaddingConfig {
+  return config.hasOwnProperty("inputPadding");
+}
 
 // function styleControl(colorConfig: Array<SingleColorConfig>) {
 type Names<T extends readonly SingleColorConfig[]> = T[number]["name"];
@@ -249,6 +258,12 @@ function isEmptyMargin(margin: string) {
 }
 function isEmptyPadding(padding: string) {
   return _.isEmpty(padding);
+}
+function isEmptyInputMargin(inputMargin: string) {
+  return _.isEmpty(inputMargin);
+}
+function isEmptyInputPadding(inputPadding: string) {
+  return _.isEmpty(inputPadding);
 }
 
 /**
@@ -366,6 +381,14 @@ function calcColors<ColorMap extends Record<string, string>>(
       return;
     }
     if (!isEmptyPadding(props[name]) && isPaddingConfig(config)) {
+      res[name] = props[name];
+      return;
+    }
+    if (!isEmptyInputMargin(props[name]) && isInputMarginConfig(config)) {
+      res[name] = props[name];
+      return;
+    }
+    if (!isEmptyInputPadding(props[name]) && isInputPaddingConfig(config)) {
       res[name] = props[name];
       return;
     }
@@ -611,6 +634,8 @@ export function styleControl<T extends readonly SingleColorConfig[]>(colorConfig
       name === "footerBackgroundImageOrigin" ||
       name === "margin" ||
       name === "padding" ||
+      name === "inputMargin" ||
+      name === "inputPadding" ||
       name === "containerheaderpadding" ||
       name === "containerfooterpadding" ||
       name === "containerbodypadding"
@@ -657,6 +682,8 @@ export function styleControl<T extends readonly SingleColorConfig[]>(colorConfig
                       name === "radius" ||
                       name === "margin" ||
                       name === "padding" ||
+                      name === "inputMargin" ||
+                      name === "inputPadding" ||
                       name === "containerheaderpadding" ||
                       name === "containerfooterpadding" ||
                       name === "containerbodypadding" ||
@@ -748,6 +775,25 @@ export function styleControl<T extends readonly SingleColorConfig[]>(colorConfig
                               placeholder: props[name],
                             })
                             : (name === "padding" ||
+                              name === "containerheaderpadding" ||
+                              name === "containerfooterpadding" ||
+                              name === "containerbodypadding")
+                              ? (
+                                children[name] as InstanceType<typeof StringControl>
+                              ).propertyView({
+                                label: config.label,
+                                preInputNode: <PaddingIcon title="Padding" />,
+                                placeholder: props[name],
+                              })
+                              :name === "inputMargin"
+                            ? (
+                              children[name] as InstanceType<typeof StringControl>
+                            ).propertyView({
+                              label: config.label,
+                              preInputNode: <MarginIcon title="Margin" />,
+                              placeholder: props[name],
+                            })
+                            : (name === "inputPadding" ||
                               name === "containerheaderpadding" ||
                               name === "containerfooterpadding" ||
                               name === "containerbodypadding")

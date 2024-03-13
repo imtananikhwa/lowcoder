@@ -337,6 +337,8 @@ export const de = {
       "footerIcon": "Fußzeilen-Symbol",
       "tips": "Tipps",
       "margin": "Marge",
+      "inputMargin":"Eingabespanne",
+      "inputPadding":"Eingabeauffüllung",
       "padding": "Polsterung",
       "marginLeft": "Rand links",
       "marginRight": "Rand rechts",

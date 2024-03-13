@@ -358,6 +358,8 @@ export const en = {
     "footerIcon": "Footer Icon",
     "tips": "Tips",
     "margin": "Margin",
+    "inputMargin":"Input Margin",
+    "inputPadding":"Input Padding",
     "padding": "Padding",
     "marginLeft": "Margin Left",
     "marginRight": "Margin Right",

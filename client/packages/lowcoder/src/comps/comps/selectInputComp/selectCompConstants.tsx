@@ -68,11 +68,11 @@ export const getStyle = (
     &.ant-select .ant-select-selector,
     &.ant-select-multiple .ant-select-selection-item {
       border-radius: ${style.radius};
-      padding: ${style.padding};	
+      // padding: ${style.padding};	
       height: auto;	
     }	
     .ant-select-selection-search {	
-      padding: ${style.padding};
+      // padding: ${style.padding};
     }	
     .ant-select-selection-search-input {
       font-family:${(style as SelectStyleType).fontFamily} !important;
@@ -103,7 +103,7 @@ export const getStyle = (
       }
 
       .ant-select-selector {
-        background-color: ${style.background};
+        // background-color: ${style.background};
         border-color: ${style.border};
         border-width:${(style as SelectStyleType).borderWidth};
       }

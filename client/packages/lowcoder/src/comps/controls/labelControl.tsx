@@ -38,6 +38,9 @@ function getStyle(style: any) {
     > div:nth-of-type(2) {
       color: ${style.validate};
     }
+    background-color:${style.background};
+    padding:${style.padding};
+    margin:${style.margin};
   `;
 }
 

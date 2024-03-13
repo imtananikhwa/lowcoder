@@ -77,6 +77,12 @@ export type MarginConfig = CommonColorConfig & {
 export type PaddingConfig = CommonColorConfig & {
   readonly padding: string;
 };
+export type InputMarginConfig = CommonColorConfig & {
+  readonly inputMargin: string;
+};
+export type InputPaddingConfig = CommonColorConfig & {
+  readonly inputPadding: string;
+};
 
 export type TextTransformConfig = CommonColorConfig & {
   readonly textTransform: string;
@@ -92,7 +98,7 @@ export type DepColorConfig = CommonColorConfig & {
   readonly depType?: DEP_TYPE;
   transformer: (color: string, ...rest: string[]) => string;
 };
-export type SingleColorConfig = SimpleColorConfig | DepColorConfig | RadiusConfig | BorderWidthConfig | borderStyleConfig | BackgroundImageConfig | BackgroundImageRepeatConfig | BackgroundImageSizeConfig | BackgroundImagePositionConfig | BackgroundImageOriginConfig | TextSizeConfig | TextWeightConfig | TextTransformConfig | TextDecorationConfig | FontFamilyConfig | FontStyleConfig | MarginConfig | PaddingConfig | ContainerHeaderPaddigConfig | ContainerFooterPaddigConfig | ContainerBodyPaddigConfig | HeaderBackgroundImageConfig | HeaderBackgroundImageRepeatConfig | HeaderBackgroundImageSizeConfig | HeaderBackgroundImagePositionConfig | HeaderBackgroundImageOriginConfig | FooterBackgroundImageConfig | FooterBackgroundImageRepeatConfig | FooterBackgroundImageSizeConfig | FooterBackgroundImagePositionConfig | FooterBackgroundImageOriginConfig;
+export type SingleColorConfig = SimpleColorConfig | InputMarginConfig | InputPaddingConfig | DepColorConfig | RadiusConfig | BorderWidthConfig | borderStyleConfig | BackgroundImageConfig | BackgroundImageRepeatConfig | BackgroundImageSizeConfig | BackgroundImagePositionConfig | BackgroundImageOriginConfig | TextSizeConfig | TextWeightConfig | TextTransformConfig | TextDecorationConfig | FontFamilyConfig | FontStyleConfig | MarginConfig | PaddingConfig | ContainerHeaderPaddigConfig | ContainerFooterPaddigConfig | ContainerBodyPaddigConfig | HeaderBackgroundImageConfig | HeaderBackgroundImageRepeatConfig | HeaderBackgroundImageSizeConfig | HeaderBackgroundImagePositionConfig | HeaderBackgroundImageOriginConfig | FooterBackgroundImageConfig | FooterBackgroundImageRepeatConfig | FooterBackgroundImageSizeConfig | FooterBackgroundImagePositionConfig | FooterBackgroundImageOriginConfig;
 
 export const defaultTheme: ThemeDetail = {
   primary: "#3377FF",
@@ -103,6 +109,8 @@ export const defaultTheme: ThemeDetail = {
   borderRadius: "4px",
   margin: "3px",
   padding: "3px",
+  inputMargin:'3px',
+  inputPadding:'3px',
   gridColumns: "24",
   textSize: "14px",
 };
@@ -256,6 +264,7 @@ const TEXT = {
   transformer: contrastText,
 } as const;
 
+
 const STATIC_TEXT = {
   name: "staticText",
   label: trans("style.staticText"),
@@ -348,6 +357,18 @@ const PADDING = {
   name: "padding",
   label: trans("style.padding"),
   padding: "padding",
+} as const;
+
+const INPUT_MARGIN = {
+  name: "inputMargin",
+  label: trans("style.inputMargin"),
+  inputMargin: "Input margin",
+} as const;
+
+const INPUT_PADDING = {
+  name: "inputPadding",
+  label: trans("style.inputPadding"),
+  inputPadding: "Input padding",
 } as const;
 
 const TEXT_SIZE = {
@@ -839,6 +860,8 @@ export const CascaderStyle = [
   ACCENT,
   MARGIN,
   PADDING,
+  INPUT_MARGIN,
+  INPUT_PADDING
 ] as const;
 
 function checkAndUncheck() {

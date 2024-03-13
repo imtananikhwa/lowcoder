@@ -362,13 +362,13 @@ const PADDING = {
 const INPUT_MARGIN = {
   name: "inputMargin",
   label: trans("style.inputMargin"),
-  inputMargin: "Input margin",
+  inputMargin: "inputMargin",
 } as const;
 
 const INPUT_PADDING = {
   name: "inputPadding",
   label: trans("style.inputPadding"),
-  inputPadding: "Input padding",
+  inputPadding: "inputPadding",
 } as const;
 
 const TEXT_SIZE = {

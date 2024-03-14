@@ -72,7 +72,7 @@ export const getStyle = (style: DateTimeStyleType) => {
     padding: ${style.padding};
     &:not(.ant-picker-disabled) {
       border-color: ${style.border};
-      background-color: ${style.background};
+      // background-color: ${style.background};
 
       input {
         color: ${style.text};
@@ -91,7 +91,7 @@ export const getStyle = (style: DateTimeStyleType) => {
       .ant-picker-suffix,
       .ant-picker-clear,
       .ant-picker-separator {
-        background-color: ${style.background};
+        // background-color: ${style.background};
         color: ${style.text === "#222222"
           ? "#8B8FA3"
           : isDarkColor(style.text)

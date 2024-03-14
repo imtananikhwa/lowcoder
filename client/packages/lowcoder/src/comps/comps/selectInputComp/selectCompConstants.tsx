@@ -71,11 +71,7 @@ export const getStyle = (
       padding: ${style.inputPadding};
       margin:${style.inputMargin};	
       height: auto;	
-    }	
-    .ant-select-selection-search {	
-      padding: ${style.inputPadding};
-      margin:${style.inputMargin};
-    }	
+    }		
     .ant-select-selection-search-input {
       font-family:${(style as SelectStyleType).fontFamily} !important;
       text-transform:${(style as SelectStyleType).textTransform} !important;
@@ -84,6 +80,8 @@ export const getStyle = (
       font-weight:${(style as SelectStyleType).textWeight};
       color:${(style as SelectStyleType).text} !important;
       font-style:${(style as SelectStyleType).fontStyle};
+      padding: ${style.inputPadding};
+      margin:${style.inputMargin};
     }
     .ant-select-selector::after,	
     .ant-select-selection-placeholder,	
@@ -119,7 +117,8 @@ export const getStyle = (
 
       .ant-select-arrow,
       .ant-select-clear {
-        background-color: ${style.background};
+        // background-color: ${style.background};
+        background-color:transparent;
         color: ${style.text === "#222222"
       ? "#8B8FA3"
       : isDarkColor(style.text)

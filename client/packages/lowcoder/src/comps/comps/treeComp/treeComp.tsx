@@ -39,11 +39,13 @@ type TreeStyleType = StyleConfigType<typeof TreeStyle>;
 const Container = styled.div<TreeStyleType>`
   height: 100%;
   padding: 4px;
-  background: ${(props) => props.background};
+  // background: ${(props) => props.background};
+  background:#fff;
   border: 1px solid ${(props) => props.border};
   border-radius: ${(props) => props.radius};
   .ant-tree-show-line .ant-tree-switcher {
-    background: ${(props) => props.background};
+    // background: ${(props) => props.background};
+    background:#fff;
   }
   .ant-tree:hover .ant-tree-list-scrollbar-show {
     display: block !important;

@@ -119,6 +119,7 @@ export const SURFACE_COLOR = "#FFFFFF";
 const SECOND_SURFACE_COLOR = "#D7D9E0";
 const ERROR_COLOR = "#F5222D";
 const SUCCESS_COLOR = "#079968";
+const CANVAS_COLOR = '#f5f5f6';
 
 export enum DEP_TYPE {
   CONTRAST_TEXT = "contrastText",
@@ -741,7 +742,7 @@ export const SliderStyle = [
 ] as const;
 
 export const InputLikeStyle = [
-  getStaticBackground(SURFACE_COLOR),
+  getStaticBackground(CANVAS_COLOR),
   ...STYLING_FIELDS_SEQUENCE,
   ...ACCENT_VALIDATE,
 ] as const;
@@ -789,12 +790,12 @@ export const SwitchStyle = [
 ] as const;
 
 export const SelectStyle = [
-  ...replaceAndMergeMultipleStyles(STYLING_FIELDS_SEQUENCE, 'border', [...getStaticBgBorderRadiusByBg(SURFACE_COLOR, "pc")]),
+  ...replaceAndMergeMultipleStyles(STYLING_FIELDS_SEQUENCE, 'border', [...getStaticBgBorderRadiusByBg(CANVAS_COLOR, "pc"),INPUT_MARGIN,INPUT_PADDING]),
   ...ACCENT_VALIDATE,
 ] as const;
 
 const multiSelectCommon = [
-  ...replaceAndMergeMultipleStyles(STYLING_FIELDS_SEQUENCE, 'border', [...getStaticBgBorderRadiusByBg(SURFACE_COLOR, "pc")]),
+  ...replaceAndMergeMultipleStyles(STYLING_FIELDS_SEQUENCE, 'border', [...getStaticBgBorderRadiusByBg(CANVAS_COLOR, "pc"),INPUT_MARGIN,INPUT_PADDING]),
   {
     name: "tags",
     label: trans("style.tags"),
@@ -855,7 +856,7 @@ export const ModalStyle = [
 ] as const;
 
 export const CascaderStyle = [
-  ...getStaticBgBorderRadiusByBg(SURFACE_COLOR, "pc"),
+  ...getStaticBgBorderRadiusByBg(CANVAS_COLOR, "pc"),
   TEXT,
   ACCENT,
   MARGIN,
@@ -1073,7 +1074,7 @@ export const FileViewerStyle = [
 export const IframeStyle = [getBackground(), getStaticBorder("#00000000"), RADIUS, BORDER_WIDTH, MARGIN, PADDING] as const;
 
 export const DateTimeStyle = [
-  ...getStaticBgBorderRadiusByBg(SURFACE_COLOR),
+  ...getStaticBgBorderRadiusByBg(CANVAS_COLOR),
   TEXT,
   MARGIN,
   PADDING,
@@ -1219,7 +1220,7 @@ export const TimeLineStyle = [
 ] as const;
 
 export const TreeStyle = [
-  ...getStaticBgBorderRadiusByBg(SURFACE_COLOR),
+  ...getStaticBgBorderRadiusByBg(CANVAS_COLOR),
   TEXT,
   VALIDATE,
 ] as const;

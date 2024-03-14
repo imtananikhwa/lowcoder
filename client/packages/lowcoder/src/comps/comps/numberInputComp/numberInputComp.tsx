@@ -62,7 +62,7 @@ const getStyle = (style: InputLikeStyleType) => {
     // still use antd style when disabled
     &:not(.ant-input-number-disabled) {
       color: ${style.text};
-      background-color: ${style.background};
+      // background-color: ${style.background};
       border-color: ${style.border};
       //margin: ${style.margin};	
       padding: 0;	

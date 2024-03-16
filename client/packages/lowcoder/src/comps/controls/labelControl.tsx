@@ -39,8 +39,6 @@ function getStyle(style: any) {
       color: ${style.validate};
     }
     background-color:${style.background};
-    padding:${style.padding};
-    // margin:${style.margin}; commented as it was causing margin issues
   `;
 }
 
@@ -168,6 +166,7 @@ export const LabelControl = (function () {
         $hasLabel={!!props.text}
         style={{
           margin: args && args.style ? args?.style?.margin : 0,
+          padding:args && args.style ? args.style?.padding:0,
           // padding: args && args.style ? args?.style?.padding : 0,	
           width: widthCalculator(
             args && args.style ? args?.style?.margin : "0px"

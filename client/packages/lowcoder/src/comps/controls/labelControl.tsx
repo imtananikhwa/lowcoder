@@ -40,7 +40,7 @@ function getStyle(style: any) {
     }
     background-color:${style.background};
     padding:${style.padding};
-    margin:${style.margin};
+    // margin:${style.margin}; commented as it was causing margin issues
   `;
 }
 
